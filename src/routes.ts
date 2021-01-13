@@ -1,16 +1,17 @@
-import * as routesCtrl from "./routes.controller"
+import { Express, Router } from "express"
+import * as controller from "./controllers/_index"
 
 // Rutas
-export default function getRoutes(app: any) {
-  app.get("/", routesCtrl.getRoot)
+export default function getRoutes(app: Express): void {
+  app.get("/", controller.getRoot)
 
-  app.get("/home", routesCtrl.getPots)
+  app.get("/home", controller.getPots)
 
-  app.post("/home", routesCtrl.postPosts)
+  app.post("/home", controller.postPosts)
 
-  app.get("/article/:id", routesCtrl.getArticle)
+  app.get("/article/:id", controller.getArticle)
 
-  app.delete("/article/:id", routesCtrl.deletePost)
+  app.delete("/article/:id", controller.deletePost)
 
-  app.put("/article/:id", routesCtrl.putPost)
+  app.put("/article/:id", controller.putPost)
 }
