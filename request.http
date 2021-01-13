@@ -1,0 +1,42 @@
+@URL =  http://localhost:3000
+
+### Ruta inicial
+
+GET {{URL}}
+
+### Obtiene los datos
+
+GET {{URL}}/home
+
+### Obtiene un articulo
+
+GET {{URL}}/article/5ffe6e4bb878f68ccde4c4d2
+
+### Manda un post
+
+POST {{URL}}/home
+Content-Type: application/json
+
+{ 
+  "title": "other title",
+  "description": "some desc and more",
+  "categories": [
+    "javascript",
+    "typescript"
+  ],
+  "img": "https://javiniguez.com/wp-content/uploads/2019/07/que-es-javascript.jpg"
+}
+
+### Elimina el post
+
+DELETE {{URL}}/article/5ffe670332ebdb8606206158
+
+### Actualiza el post
+
+PUT {{URL}}/article/5ffe6e4bb878f68ccde4c4d2
+Content-Type: application/json
+
+{
+  "title": "Aprendiendo un poco de Backend",
+  "description": "Esto es muy divertido :D"
+}
